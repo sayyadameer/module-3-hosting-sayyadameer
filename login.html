@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        label
+        {
+            font-size: larger;
+            background-color: aqua;
+        }
+        *
+        {
+            font-size: larger;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2 style="font-size: larger;">Login</h2>
+    <form name="myform" action="login_process.php" method="post" onsubmit="return validateform()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Login" style="font-size: larger;">
+    </form>
+
+    <p><a href="forgot_password.html" target="rightFrame">Forgot Password?</a></p>
+    <p><a href="registration.html" target="rightFrame">Sign Up</a></p>
+</body>
+    <script>
+       function validateform(){  
+       var name=document.myform.username.value;  
+       var password=document.myform.password.value;  
+  
+       if (name==null || name==""){  
+        alert("Name can't be blank");  
+            return false;  
+        }
+        else if(password.length<6)
+        {  
+          alert("Password must be at least 6 characters long.");  
+          return false;  
+       }
+}   
+    </script>
+</html>
